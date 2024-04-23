@@ -17,8 +17,8 @@ export default function Login() {
   // eslint-disable-next-line no-unused-vars
   const {user, setUser, isUserLoggedIn} = useContext(UserContext)
 
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState("admin10")
+  const [password, setPassword] = useState("12345")
   const [errorDisplay, setErrorDisplay] = useState("")
 
   const onLoginFormSubmit = (event) => {
@@ -69,7 +69,9 @@ export default function Login() {
               onChange={(event)=>{setUsername(event.target.value)}}
               placeholder="USERNAME"
               type="text"
-              name="username"/>
+              name="username"
+              value={username}
+              />              
           </label>
         </group>
         <br/>
@@ -80,7 +82,9 @@ export default function Login() {
               onChange={(event)=>{setPassword(event.target.value)}}
               placeholder="PASSWORD"
               type="password"
-              name="password"/>
+              name="password"
+              value={password}
+              />
           </label>
         </group>
         <button type="submit">Login</button>

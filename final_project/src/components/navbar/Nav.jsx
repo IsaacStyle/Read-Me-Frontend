@@ -13,6 +13,7 @@ export default function Nav({ search, handleSearch }) {
     event.preventDefault();
     logoutUser();
     setUser(null);
+    window.location.reload();
   }
     return (
     <div>
