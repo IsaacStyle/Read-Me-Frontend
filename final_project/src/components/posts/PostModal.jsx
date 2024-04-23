@@ -31,7 +31,6 @@ function PostModal({ modalPost, displayModal, setDisplayModal, setModalPost, com
 
         console.log(modalState)
         let newUpVotes = modalPost.up_votes + 1
-        console.log(modalPost)
         // setModalState(prev => ({...prev, up_votes : newUpVotes}))
         try {
             const response = await updatePost(modalPost.id, {...modalPost, up_votes: newUpVotes});
@@ -46,13 +45,13 @@ function PostModal({ modalPost, displayModal, setDisplayModal, setModalPost, com
     const handleDownVote = async () => {
 
       console.log(modalState)
-      let newDownVotes = modalState.down_votes + 1
-      setModalState(prev => ({...prev, down_votes : newDownVotes}))
+      let newDownVotes = modalPost.down_votes + 1
+    //   setModalState(prev => ({...prev, down_votes : newDownVotes}))
       try {
-        //   voteHelp.play()
-          const response = await updatePost(modalPost.id, {...modalState});
+          const response = await updatePost(modalPost.id, {...modalState, down_votes: newDownVotes});
           console.log("update post response:", response); 
-          await getPost(modalPost.id);
+          const responsePosts = await getPost(modalPost.id);
+          setModalPost(responsePosts)
       } catch (error) {
           console.log("update post error:", error);
       }
