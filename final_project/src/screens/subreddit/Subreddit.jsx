@@ -153,6 +153,7 @@ export default function Subreddit({}) {
           modalPost={modalPost}
           displayModal={displayModal}
           setDisplayModal={setDisplayModal}
+          setModalPost={setModalPost}
           comments={comments}
           refresh={refresh}
           setRefresh={setRefresh}

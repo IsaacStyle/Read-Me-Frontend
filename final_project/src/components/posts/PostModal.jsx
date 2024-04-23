@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState, useContext } from "react";
 import "./PostModal.css";
-import { updatePost } from "../../services/posts";
+import { updatePost,getPost } from "../../services/posts";
 import CommentBox from "./CommentBox";
 
 import { createComment, getComments } from "../../services/comments";
 import { UserContext } from "../../contexts/userContext";
 
 
-function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComments, banana, refresh, setRefresh }) {
+function PostModal({ modalPost, displayModal, setDisplayModal, setModalPost, comments, setComments, banana, refresh, setRefresh }) {
     const body = document.querySelector("body");
 
     const handleClose = () => {
@@ -30,12 +30,14 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComm
     const handleUpVote = async () => {
 
         console.log(modalState)
-        let newUpVotes = modalState.up_votes + 1
-        setModalState(prev => ({...prev, up_votes : newUpVotes}))
+        let newUpVotes = modalPost.up_votes + 1
+        console.log(modalPost)
+        // setModalState(prev => ({...prev, up_votes : newUpVotes}))
         try {
-            // voteHelp2.play()
-            const response = await updatePost(modalPost.id, {...modalState});
+            const response = await updatePost(modalPost.id, {...modalPost, up_votes: newUpVotes});
             console.log("update post response:", response); 
+            const responsePosts = await getPost(modalPost.id);
+            setModalPost(responsePosts)
         } catch (error) {
             console.log("update post error:", error);
         }
@@ -50,6 +52,7 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComm
         //   voteHelp.play()
           const response = await updatePost(modalPost.id, {...modalState});
           console.log("update post response:", response); 
+          await getPost(modalPost.id);
       } catch (error) {
           console.log("update post error:", error);
       }
