@@ -33,7 +33,7 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComm
         let newUpVotes = modalState.up_votes + 1
         setModalState(prev => ({...prev, up_votes : newUpVotes}))
         try {
-            voteHelp2.play()
+            // voteHelp2.play()
             const response = await updatePost(modalPost.id, {...modalState});
             console.log("update post response:", response); 
         } catch (error) {
@@ -47,7 +47,7 @@ function PostModal({ modalPost, displayModal, setDisplayModal, comments, setComm
       let newDownVotes = modalState.down_votes + 1
       setModalState(prev => ({...prev, down_votes : newDownVotes}))
       try {
-          voteHelp.play()
+        //   voteHelp.play()
           const response = await updatePost(modalPost.id, {...modalState});
           console.log("update post response:", response); 
       } catch (error) {
