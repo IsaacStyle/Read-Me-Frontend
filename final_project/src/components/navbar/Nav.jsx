@@ -19,7 +19,7 @@ export default function Nav({ search, handleSearch }) {
     <div>
       <nav className="navBar">
         <HamburgerMenu />
-        <NavLink className={"navBarInfo"} to="/">
+        <NavLink className={"navBarInfo"} id={'navBarTitle'} to="/">
           ReadMe
         </NavLink>
 
