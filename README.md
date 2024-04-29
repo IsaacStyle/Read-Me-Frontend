@@ -6,15 +6,16 @@
 <br/>
 
 **To see the live site click the below link !**
-TBD
+<br/>
+[README](https://read-me-deploy.netlify.app/)
 
 ## Features
 - Create, read, update and delete posts
 - Like and unlike posts
 - Create, reply to, read, update and delete nested comments
-- Sign up and login using JWT for authentication
-- Sort posts by attributes such as like count and "dislike" or down vote count.
-- Search for posts by their title
+- Login using JWT for authentication
+- Create Update and Delete Features locked behind User Auth (Default Admin Login provided for testing at login page)
+- Sort posts by attributes such as like count, "dislike" or down vote count and by Subreddit.
 - Fully responsive layout
 
 
@@ -41,11 +42,20 @@ npm install
 ```
 npm start
 ```
-## Technologies Used
-<img src="https://camo.githubusercontent.com/d63d473e728e20a286d22bb2226a7bf45a2b9ac6c72c59c0e61e9730bfe4168c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f48544d4c352d4533344632363f7374796c653d666f722d7468652d6261646765266c6f676f3d68746d6c35266c6f676f436f6c6f723d7768697465"></img> <img src="https://camo.githubusercontent.com/3a0f693cfa032ea4404e8e02d485599bd0d192282b921026e89d271aaa3d7565/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f435353332d3135373242363f7374796c653d666f722d7468652d6261646765266c6f676f3d63737333266c6f676f436f6c6f723d7768697465"></img> <img src="https://camo.githubusercontent.com/9d07c04bdd98c662d5df9d4e1cc1de8446ffeaebca330feb161f1fb8e1188204/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6176615363726970742d4637444631453f7374796c653d666f722d7468652d6261646765266c6f676f3d6a617661736372697074266c6f676f436f6c6f723d626c61636b"></img> <img src="https://camo.githubusercontent.com/94be0a2e5be142925615e5821d97137a930d08fc154962ce43860f1957e6661e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f507974686f6e2d3337373641423f7374796c653d666f722d7468652d6261646765266c6f676f3d707974686f6e266c6f676f436f6c6f723d7768697465"></img> <img src="https://camo.githubusercontent.com/7d7b100e379663ee40a20989e6c61737e6396c1dafc3a7c6d2ada8d4447eb0e4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6e6f64652e6a732d3644413535463f7374796c653d666f722d7468652d6261646765266c6f676f3d6e6f64652e6a73266c6f676f436f6c6f723d7768697465"></img> <img src="https://camo.githubusercontent.com/ab4c3c731a174a63df861f7b118d6c8a6c52040a021a552628db877bd518fe84/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656163742d2532333230323332612e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d7265616374266c6f676f436f6c6f723d253233363144414642"></img> 
+
+## Technologies Used:
+- **axios**: Version 1.3.2. Axios is a popular promise-based HTTP client for making asynchronous requests in JavaScript.
+- **react**: Version 18.2.0. React is a JavaScript library for building user interfaces.
+- **react-bootstrap**: Version 2.7.1. React Bootstrap is a UI library that provides Bootstrap components built with React.
+- **react-dom**: Version 18.2.0. React DOM is a package that serves as the entry point to the DOM and server rendering for React applications.
+- **react-quill**: Version 2.0.0. React Quill is a rich text editor component for React applications.
+- **react-responsive-modal**: Version 6.4.1. React Responsive Modal is a library for creating responsive modals in React applications.
+- **react-router-dom**: Version 6.8.1. React Router DOM is a routing library for React applications that enables navigation and rendering of components based on the URL.
+
+These technologies/libraries are used to build and enhance the functionality of the project. Make sure to install them via npm or yarn before running the project.
 
 
-Members:
+## Members:
 - [Angela Kwon](https://github.com/kwonangela)
 - [Xavier Valtierra](https://github.com/ValtierraXavier)
 - [Jack Jiang](https://github.com/jjiang9888)
@@ -53,3 +63,4 @@ Members:
 - [Justin Ozkan](https://github.com/jozkan30)
 - [Gabe Cohen](https://github.com/manse99)
 - [Edward Olstrom](https://github.com/olstromej)
+- [Isaac Okpara](https://github.com/IsaacStyle)
