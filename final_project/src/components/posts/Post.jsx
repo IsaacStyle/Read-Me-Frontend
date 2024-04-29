@@ -4,7 +4,15 @@ import { useState, useEffect } from "react";
 import { getComments, getComment } from "../../services/comments.js";
 import { getPost, getPosts } from "../../services/posts";
 
-export default function Post({ key, post, setModalPost, setDisplayModal, modalPost, comments }) {
+export default function Post({ key, displayModal, posts, post, setModalPost, setDisplayModal, modalPost, comments }) {
+  const [vote,setVote]  = useState({id: post.id, up_votes: post.up_votes, down_votes: post.down_votes})
+
+  useEffect(() => {
+    if (modalPost.id == post.id) {
+      setVote({id: modalPost.id, up_votes: modalPost.up_votes, down_votes: modalPost.down_votes})
+    }
+  }, [displayModal]);
+
   function handleClick() {
     console.log("Modal was clicked");
     setModalPost(post);
@@ -19,12 +27,12 @@ export default function Post({ key, post, setModalPost, setDisplayModal, modalPo
       <div id="votes-div">
         <span className="votes" id="upVotes">
           {" "}
-          ⬆:{post.up_votes}{" "}
+          ⬆:{vote.up_votes}{" "}
         </span>
         <br />
         <span className="votes" id="downVotes">
           {" "}
-          ⬇: {post.down_votes}{" "}
+          ⬇: {vote.down_votes}{" "}
         </span>
         <p id="comments-tab"> {comments.filter(comment => comment.post === post.id).length}  people are talking about this 💬 </p>
       </div>

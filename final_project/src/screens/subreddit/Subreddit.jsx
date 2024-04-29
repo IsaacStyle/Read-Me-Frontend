@@ -130,22 +130,26 @@ export default function Subreddit({}) {
         {/* <button onClick={openCreateModal}>newPost</button> */}
 
         {show == true ? 
-          <div className="create-buttons">
+          <>
           <CreatePost subID={subID}/>
-            <button className="new-post-button" id="close-post" onClick={closeCreateModal}>Close</button>
-          </div>
-          :<button className="new-post-button" onClick={openCreateModal}>New Post</button>}
+          <button className="new-post-button" id="close-post" onClick={closeCreateModal}>Close</button>
+          </>
+          : <button className="new-post-button" onClick={openCreateModal}>New Post</button>}
 
       </div>
     {/* if join-subreddit == Join clicked. check if user object contains subreddit-ID then change button to Joined if not display join */}
     <div className='sub-post'>
     {posts.map((post) => (
           <Post
-            key={post.id}
-            setDisplayModal={setDisplayModal}
-            setModalPost={setModalPost}
-            post={post}
-            comments={comments}
+          key={post.id}
+          displayModal={displayModal}
+          setDisplayModal={setDisplayModal}
+          setModalPost={setModalPost}
+          post={post}
+          posts={posts}
+          setPosts={setPosts}
+          modalPost={modalPost}
+          comments={comments}
           />
         ))}
 

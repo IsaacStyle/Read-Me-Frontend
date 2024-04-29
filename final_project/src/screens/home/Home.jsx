@@ -144,9 +144,11 @@ export default function Home() {
         {posts.map((post) => (
           <Post
             key={post.id}
+            displayModal={displayModal}
             setDisplayModal={setDisplayModal}
             setModalPost={setModalPost}
             post={post}
+            posts={posts}
             setPosts={setPosts}
             modalPost={modalPost}
             comments={comments}
@@ -158,6 +160,7 @@ export default function Home() {
         displayModal={displayModal}
         setDisplayModal={setDisplayModal}
         setModalPost={setModalPost}
+        posts={posts}
         setPosts={setPosts}
         comments={comments}
         refresh={refresh}

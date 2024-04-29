@@ -97,10 +97,13 @@
 }
 
 .create-buttons #close-post {
-  margin-left: 420px;
-  height: 40px;
-  margin-top: 8px;
-  background-color: #467172;
+  display: flex;
+  flex-flow: row wrap;
+  height: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 5px 10px;
+  margin-left: -10px;
 }
 
 .sub-post .post-card {
