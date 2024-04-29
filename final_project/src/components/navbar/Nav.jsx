@@ -30,9 +30,9 @@ export default function Nav({ search, handleSearch }) {
           :
           <div>
           <NavLink className={"navBarInfo"} id="navbar-buttons" to="/login">Login</NavLink>
-          <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
+          {/* <NavLink className={"navBarInfo"} id="navbar-buttons" to="/signup">
           Sign-Up
-        </NavLink>
+        </NavLink> */}
         </div>
         }
       </nav>

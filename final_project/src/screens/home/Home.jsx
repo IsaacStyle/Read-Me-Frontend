@@ -136,7 +136,7 @@ export default function Home() {
         <p className="filter-text"> Filter By:</p>
         <div id="filter-button">
           <button onClick={sort}> Likes 👍 </button>
-          <button onClick={dislikes}> Not likes 👎 </button>
+          <button onClick={dislikes}> Dislikes 👎 </button>
         </div>
       </div>
       <div className="user-assets-container">{/* <UserAssets /> */}</div>
@@ -147,6 +147,7 @@ export default function Home() {
             setDisplayModal={setDisplayModal}
             setModalPost={setModalPost}
             post={post}
+            setPosts={setPosts}
             modalPost={modalPost}
             comments={comments}
           />
@@ -157,6 +158,7 @@ export default function Home() {
         displayModal={displayModal}
         setDisplayModal={setDisplayModal}
         setModalPost={setModalPost}
+        setPosts={setPosts}
         comments={comments}
         refresh={refresh}
         setRefresh={setRefresh}

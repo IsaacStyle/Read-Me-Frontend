@@ -1,17 +1,19 @@
 import { useEffect, useRef, useState, useContext } from "react";
 import "./PostModal.css";
-import { updatePost,getPost } from "../../services/posts";
+import { updatePost,getPost,getPosts } from "../../services/posts";
 import CommentBox from "./CommentBox";
 
 import { createComment, getComments } from "../../services/comments";
 import { UserContext } from "../../contexts/userContext";
 
 
-function PostModal({ modalPost, displayModal, setDisplayModal, setModalPost, comments, setComments, banana, refresh, setRefresh }) {
+function PostModal({ modalPost, setPosts, displayModal, setDisplayModal, setModalPost, comments, setComments, banana, refresh, setRefresh }) {
     const body = document.querySelector("body");
 
     const handleClose = () => {
         setDisplayModal(false);
+        setUpvoteCheck(true)
+        setDownvoteCheck(true)
         body.classList.remove('freeze-body');
     };
 
@@ -22,40 +24,44 @@ function PostModal({ modalPost, displayModal, setDisplayModal, setModalPost, com
     })
     const [voteHelp,setVoteHelp] = useState(new Audio("https://us-tuna-sounds-files.voicemod.net/af1fea8c-7061-423d-9f14-21c73cf7acd0-1656841686081.mp3"))
     const [voteHelp2,setVoteHelp2] = useState(new Audio("https://www.myinstants.com/media/sounds/taco-bell-bong-sfx.mp3"))
+    const [upvoteCheck,setUpvoteCheck] = useState(true)
+    const [downvoteCheck,setDownvoteCheck] = useState(true)
     
     useEffect(() => {
         setModalState(modalPost)
     }, [modalPost])
 
     const handleUpVote = async () => {
+        if (upvoteCheck) {
+            console.log(modalState)
+            let newUpVotes = modalPost.up_votes + 1
 
-        console.log(modalState)
-        let newUpVotes = modalPost.up_votes + 1
-        // setModalState(prev => ({...prev, up_votes : newUpVotes}))
-        try {
-            const response = await updatePost(modalPost.id, {...modalPost, up_votes: newUpVotes});
-            console.log("update post response:", response); 
-            const responsePosts = await getPost(modalPost.id);
-            setModalPost(responsePosts)
-        } catch (error) {
-            console.log("update post error:", error);
+            try {
+                const response = await updatePost(modalPost.id, {...modalPost, up_votes: newUpVotes});
+                console.log("update post response:", response); 
+                const responsePosts = await getPost(modalPost.id);
+                setModalPost(responsePosts)
+                setUpvoteCheck(false)
+            } catch (error) {
+                console.log("update post error:", error);
+            }
         }
     };
 
     const handleDownVote = async () => {
-
-      console.log(modalState)
-      let newDownVotes = modalPost.down_votes + 1
-    //   setModalState(prev => ({...prev, down_votes : newDownVotes}))
-      try {
-          const response = await updatePost(modalPost.id, {...modalState, down_votes: newDownVotes});
-          console.log("update post response:", response); 
-          const responsePosts = await getPost(modalPost.id);
-          setModalPost(responsePosts)
-      } catch (error) {
-          console.log("update post error:", error);
-      }
-
+        if (downvoteCheck) {
+            console.log(modalState)
+            let newDownVotes = modalPost.down_votes + 1
+            try {
+                const response = await updatePost(modalPost.id, {...modalState, down_votes: newDownVotes});
+                console.log("update post response:", response); 
+                const responsePosts = await getPost(modalPost.id);
+                setModalPost(responsePosts)
+                setDownvoteCheck(false)
+            } catch (error) {
+                console.log("update post error:", error);
+            }
+        }
   };
 
 
