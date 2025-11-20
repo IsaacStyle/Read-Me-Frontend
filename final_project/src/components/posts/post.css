@@ -1,71 +1,201 @@
 .post-card {
   display: flex;
   flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  width: 51%;
-  height: 500px;
-  margin: auto;
-  margin-bottom: 20px;
-  color: white;
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 400px;
+  margin: 0 auto var(--space-lg);
+  color: var(--color-text-inverse);
+  background-color: var(--color-bg-dark);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  cursor: pointer;
 }
 
-@media screen and (max-width: 390px) {
-  .post-card {
-    width: 98vw;
-    height: 125vw;
-    top: 5%;
-  }  
-
-  #upVotes, #downVotes{
-    font-size: 18px;
-  }
-
-  #comments-tab {
-    font-size: 14px;
-    padding-left: 0px;
-  }
-
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md), 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
+/* Post Title */
 #title {
   text-align: center;
+  padding: var(--space-md);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-inverse);
+  margin: 0;
+  line-height: var(--line-height-tight);
 }
+
+/* Post Image */
 .post-card img {
   width: 100%;
-  height: 315px;
-  object-fit: scale-down;
-} 
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  background-color: var(--color-bg-darker);
+}
 
+/* Votes and Comments Section */
 #votes-div {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 70px;
-}
-
-@media screen and (max-width: 390px){
-  #votes-div {
-    margin-top: 30px;
-  }
+  gap: var(--space-lg);
+  margin-top: auto;
+  padding: var(--space-lg);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .votes {
-  order: 1;
-  float: right;
-  margin: 5px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+}
+
+#upVotes {
+  color: var(--color-success);
+}
+
+#downVotes {
+  color: var(--color-error);
 }
 
 #comments-tab {
-  order: 2;
-  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-inverse);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color var(--transition-fast);
 }
 
+#comments-tab:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Utility */
 .hide-element {
   display: none;
 }
 
+/* ========================================
+   Responsive Design - Mobile First
+   ======================================== */
 
+/* Small Mobile (up to 480px) */
+@media screen and (max-width: 480px) {
+  .post-card {
+    width: 95vw;
+    max-width: 95vw;
+    min-height: 350px;
+    margin-bottom: var(--space-md);
+  }
 
+  #title {
+    font-size: var(--font-size-lg);
+    padding: var(--space-sm);
+  }
+
+  .post-card img {
+    height: 200px;
+  }
+
+  #votes-div {
+    padding: var(--space-md);
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .votes {
+    font-size: var(--font-size-lg);
+  }
+
+  #upVotes,
+  #downVotes {
+    font-size: var(--font-size-lg);
+  }
+
+  #comments-tab {
+    font-size: var(--font-size-sm);
+    padding: var(--space-xs) var(--space-sm);
+  }
+}
+
+/* Tablet (768px and up) */
+@media screen and (min-width: 768px) {
+  .post-card {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    min-height: 450px;
+  }
+
+  #title {
+    font-size: var(--font-size-2xl);
+    padding: var(--space-lg);
+  }
+
+  .post-card img {
+    height: 300px;
+  }
+
+  #votes-div {
+    padding: var(--space-xl);
+  }
+
+  .votes {
+    font-size: var(--font-size-2xl);
+  }
+
+  #comments-tab {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* Desktop (1024px and up) */
+@media screen and (min-width: 1024px) {
+  .post-card {
+    max-width: 700px;
+    min-height: 500px;
+  }
+
+  .post-card img {
+    height: 350px;
+  }
+}
+
+/* Large Desktop (1440px and up) */
+@media screen and (min-width: 1440px) {
+  .post-card {
+    max-width: 800px;
+    min-height: 550px;
+  }
+
+  .post-card img {
+    height: 400px;
+  }
+}
+
+.post-card:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* Ensure interactive elements are keyboard accessible */
+#votes-div button:focus-visible,
+#comments-tab:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

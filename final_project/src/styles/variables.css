@@ -1,0 +1,198 @@
+:root {
+  /* Primary Colors */
+  --color-primary: #467172;
+  --color-primary-dark: #263d3d;
+  --color-primary-light: #9eb5b6;
+  --color-accent: #1DC9A0;
+
+  /* Background Colors */
+  --color-bg-light: #F2F2F2;
+  --color-bg-dark: #353538;
+  --color-bg-darker: #3e4141;
+
+  /* Text Colors */
+  --color-text-primary: #000000;
+  --color-text-inverse: #ffffff;
+  --color-text-muted: #666666;
+
+  /* UI Colors */
+  --color-white: #ffffff;
+  --color-border: #cccccc;
+  --color-border-light: #d3d3d3;
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-overlay: rgba(0, 0, 0, 0.8);
+
+  /* Semantic Colors */
+  --color-success: #28a745;
+  --color-error: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+
+  /* Vote Colors */
+  --color-upvote: green;
+  --color-downvote: red;
+
+  /* Spacing Scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Font Families */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-heading: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  --font-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+  /* Font Sizes  */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Border Radius */
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-lg: 19px;
+  --radius-xl: 31px;
+  --radius-2xl: 43px;
+  --radius-full: 50px;
+
+  /* Shadows */
+
+  /* Box Shadows */
+  --shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
+  --shadow-lg: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  --shadow-xl: 0px 7px 29px 0px;
+
+  /* Neumorphic Shadows */
+  --shadow-neumorphic-inset: inset -5px -5px 8px #345454, inset 5px 5px 8px #588e90;
+  --shadow-neumorphic-dark: inset 34px 34px 71px #1b1c1c, inset -34px -34px 71px #616666;
+
+  /* Button Shadow */
+  --shadow-button: rgb(0 0 0 / 5%) 0 0 8px;
+  --shadow-button-hover: var(--color-accent) 0px 7px 29px 0px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-slower: 950ms ease;
+
+  /* Z-Index Scale */
+  --z-base: 1;
+  --z-dropdown: 10;
+  --z-sticky: 100;
+  --z-fixed: 1000;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* Layout */
+
+  /* Container Max Widths */
+  --container-sm: 540px;
+  --container-md: 720px;
+  --container-lg: 960px;
+  --container-xl: 1140px;
+  --container-2xl: 1320px;
+
+  /* Component Specific */
+  --navbar-height: 80px;
+  --hamburger-width: 250px;
+  --hamburger-width-mobile: 140px;
+
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --font-size-base: 1.0625rem;  /* 17px */
+    --font-size-lg: 1.25rem;      /* 20px */
+    --font-size-xl: 1.5rem;       /* 24px */
+    --font-size-2xl: 1.75rem;     /* 28px */
+    --font-size-3xl: 2.125rem;    /* 34px */
+    --font-size-4xl: 2.5rem;      /* 40px */
+  }
+}
+
+/* Desktop and up */
+@media screen and (min-width: 1024px) {
+  :root {
+    --font-size-base: 1.125rem;   /* 18px */
+    --font-size-lg: 1.375rem;     /* 22px */
+    --font-size-xl: 1.625rem;     /* 26px */
+    --font-size-2xl: 2rem;        /* 32px */
+    --font-size-3xl: 2.5rem;      /* 40px */
+    --font-size-4xl: 3rem;        /* 48px */
+  }
+}
+
+/* Responsive Container */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: var(--container-sm);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: var(--container-md);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: var(--container-lg);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: var(--container-xl);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus-visible:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

@@ -59,48 +59,49 @@ export default function Home() {
   }
   const [scrollInterval, setScrollInterval] = useState(null);
 
-  useEffect(() => {
-    const scrollContainer = document.getElementById("scroll-container");
-    const scrollLeft = document.querySelector(".scroll-left");
-    const scrollRight = document.querySelector(".scroll-right");
+  // useEffect(() => {
+  //   const scrollContainer = document.getElementById("scroll-container");
+  //   const scrollLeft = document.querySelector(".scroll-left");
+  //   const scrollRight = document.querySelector(".scroll-right");
 
-    function handleScrollLeftEnter() {
-      setScrollInterval(setInterval(() => {
-        scrollContainer.scrollBy({ left: -20, behavior: "smooth" });
-      }, 50));
-    }
+  //   function handleScrollLeftEnter() {
+  //     setScrollInterval(setInterval(() => {
+  //       scrollContainer.scrollBy({ left: -20, behavior: "smooth" });
+  //     }, 50));
+  //   }
 
-    function handleScrollLeftLeave() {
-      clearInterval(scrollInterval);
-    }
+  //   function handleScrollLeftLeave() {
+  //     clearInterval(scrollInterval);
+  //   }
 
-    function handleScrollRightEnter() {
-      setScrollInterval(setInterval(() => {
-        scrollContainer.scrollBy({ left: 20, behavior: "smooth" });
-      }, 50));
-    }
+  //   function handleScrollRightEnter() {
+  //     setScrollInterval(setInterval(() => {
+  //       scrollContainer.scrollBy({ left: 20, behavior: "smooth" });
+  //     }, 50));
+  //   }
 
-    function handleScrollRightLeave() {
-      clearInterval(scrollInterval);
-    }
+  //   function handleScrollRightLeave() {
+  //     clearInterval(scrollInterval);
+  //   }
 
-    scrollLeft.addEventListener("mouseenter", handleScrollLeftEnter);
-    scrollLeft.addEventListener("mouseleave", handleScrollLeftLeave);
-    scrollRight.addEventListener("mouseenter", handleScrollRightEnter);
-    scrollRight.addEventListener("mouseleave", handleScrollRightLeave);
+  //   scrollLeft.addEventListener("mouseenter", handleScrollLeftEnter);
+  //   scrollLeft.addEventListener("mouseleave", handleScrollLeftLeave);
+  //   scrollRight.addEventListener("mouseenter", handleScrollRightEnter);
+  //   scrollRight.addEventListener("mouseleave", handleScrollRightLeave);
 
-    return () => {
-      clearInterval(scrollInterval);
-      scrollLeft.removeEventListener("mouseenter", handleScrollLeftEnter);
-      scrollLeft.removeEventListener("mouseleave", handleScrollLeftLeave);
-      scrollRight.removeEventListener("mouseenter", handleScrollRightEnter);
-      scrollRight.removeEventListener("mouseleave", handleScrollRightLeave);
-    }
-  }, [scrollInterval]);
+  //   return () => {
+  //     clearInterval(scrollInterval);
+  //     scrollLeft.removeEventListener("mouseenter", handleScrollLeftEnter);
+  //     scrollLeft.removeEventListener("mouseleave", handleScrollLeftLeave);
+  //     scrollRight.removeEventListener("mouseenter", handleScrollRightEnter);
+  //     scrollRight.removeEventListener("mouseleave", handleScrollRightLeave);
+  //   }
+  // }, [scrollInterval]);
 
   return (
     <div className="home-page-main-container">
-      <div className="news-feed-scroll-wrapper">
+      {/* News carousel temporarily hidden - API configuration preserved */}
+      {/* <div className="news-feed-scroll-wrapper">
         <div className="news-feed-scroll" id="scroll-container">
           {articles.map((article) => (
             <div
@@ -131,7 +132,7 @@ export default function Home() {
           <div className="scroll-left">&#10094;</div>
           <div className="scroll-right">&#10095;</div>
         </div>
-      </div>
+      </div> */}
       <div className="home-page-filter-container">
         <p className="filter-text"> Filter By:</p>
         <div id="filter-button">
