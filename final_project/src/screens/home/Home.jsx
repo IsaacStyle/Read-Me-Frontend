@@ -100,7 +100,6 @@ export default function Home() {
 
   return (
     <div className="home-page-main-container">
-      {/* News carousel temporarily hidden - API configuration preserved */}
       {/* <div className="news-feed-scroll-wrapper">
         <div className="news-feed-scroll" id="scroll-container">
           {articles.map((article) => (

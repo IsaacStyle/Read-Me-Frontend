@@ -1,5 +1,5 @@
 .hamburger button {
-  margin-left: var(--space-md);
+  margin-left: 0;
   padding: var(--space-md);
   color: var(--color-text-inverse);
   background: rgba(255, 255, 255, 0.1);
@@ -159,7 +159,7 @@
 /* Small Mobile (up to 480px) */
 @media screen and (max-width: 480px) {
   .hamburger button {
-    margin-left: var(--space-xs);
+    margin-left: 0;
     padding: var(--space-sm);
   }
 
@@ -224,7 +224,7 @@
   }
 
   .hamburger button {
-    margin-left: var(--space-lg);
+    margin-left: 0;
     padding: var(--space-md) var(--space-lg);
   }
 

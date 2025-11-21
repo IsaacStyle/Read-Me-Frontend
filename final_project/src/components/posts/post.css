@@ -99,7 +99,7 @@
   .post-card {
     width: 95vw;
     max-width: 95vw;
-    min-height: 350px;
+    min-height: 300px;
     margin-bottom: var(--space-md);
   }
 
@@ -139,7 +139,7 @@
     width: 100%;
     max-width: 600px;
     height: auto;
-    min-height: 450px;
+    min-height: 380px;
   }
 
   #title {
@@ -168,7 +168,7 @@
 @media screen and (min-width: 1024px) {
   .post-card {
     max-width: 700px;
-    min-height: 500px;
+    min-height: 420px;
   }
 
   .post-card img {
@@ -180,7 +180,7 @@
 @media screen and (min-width: 1440px) {
   .post-card {
     max-width: 800px;
-    min-height: 550px;
+    min-height: 460px;
   }
 
   .post-card img {
