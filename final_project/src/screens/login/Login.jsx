@@ -88,7 +88,7 @@ export default function Login() {
           </label>
         </group>
         <button type="submit">Login</button>
-        <p id="error-message">{errorDisplay}</p>
+        {errorDisplay && <p id="error-message">{errorDisplay}</p>}
       </form>
   </div>
   )
